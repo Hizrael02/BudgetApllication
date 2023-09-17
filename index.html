@@ -7,10 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Application</title>
 </head>
-<script src="budget.js"></script>
+
 
 <body>
+    <div class="container">
+        <div class="content">
+            <label for="totalincome">Totalincome</label>
+            <input type="number" name="totalincome" id="totalincome">
+            <button id="submit">Submit</button>
+            <label for="items">Expense</label>
+            <input type="text" name="itemsName" id="itemsName">
+            <input type="number" name="itemscost" id="itemscost">
+            <button id="enter">Enter</button>
+            <div class="display">
+                <div class="disbudget">
+                    <div>
+                        <h1>Total Budget</h1>
+                        <h2 id="distoinc"></h2>
+                    </div>
+                    <div>
+                        <h1>Available Balance</h1>
+                        <h2 id="availbalance"></h2>
+                    </div>
+                </div>
+                <div class="expenselist">
+                    <ul id="unorlis"></ul>
+                </div>
 
+            </div>
+        </div>
+    </div>
+    <script src="budget.js"></script>
 </body>
 
 </html>
