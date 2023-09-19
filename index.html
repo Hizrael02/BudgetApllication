@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="budget.css">
     <title>Budget Application</title>
 </head>
 
@@ -12,24 +13,33 @@
 <body>
     <div class="container">
         <div class="content">
-            <label for="totalincome">Totalincome</label>
-            <input type="number" name="totalincome" id="totalincome">
-            <button id="submit">Submit</button>
-            <label for="items">Expense</label>
-            <input type="text" name="itemsName" id="itemsName">
-            <input type="number" name="itemscost" id="itemscost">
-            <button id="enter">Enter</button>
-            <div class="display">
+
+            <main class="main">
+                <div class="incom-contain">
+                    <label for="totalincome">Totalincome</label>
+                    <input type="number" name="totalincome" placeholder="TotalBudget" id="totalincome">
+                    <button id="submit">Submit</button>
+                </div>
                 <div class="disbudget">
-                    <div>
-                        <h1>Total Budget</h1>
-                        <h2 id="distoinc"></h2>
+                    <div class="display">
+                        <h1 id="totalb">Total Budget</h1>
+                        <h2 id="distoinc">0</h2>
                     </div>
-                    <div>
+                    <div class="display">
                         <h1>Available Balance</h1>
-                        <h2 id="availbalance"></h2>
+                        <h2 id="availbalance">0</h2>
                     </div>
                 </div>
+            </main>
+            <div class="displayexpnse">
+                <section class="section">
+                    <label for="items">Expense</label>
+                    <input type="text" name="itemsName" placeholder="Input Item" id="itemsName">
+                    <input type="number" name="itemscost" placeholder="Item Cost" id="itemscost">
+                    <button id="enter">Enter</button>
+                </section>
+
+
                 <div class="expenselist">
                     <ul id="unorlis"></ul>
                 </div>

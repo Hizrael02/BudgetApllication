@@ -11,7 +11,8 @@ disitemCost = document.getElementById('unorlis');
 submitButin.addEventListener("click", () => {
     incomeBudget = totalBudget.value;
     disTotalbudget.innerHTML = incomeBudget;
-    availableBalance.innerHTML = +totalBudget.value;
+    availableBalance.innerHTML = totalBudget.value;
+    totalBudget.value = '';
 });
 
 
@@ -19,19 +20,36 @@ submitButin.addEventListener("click", () => {
 
 
 enterButin.addEventListener("click", () => {
-
-    saveBalance = +totalBudget.value;
-    budgetminusexpense = saveBalance - itemCost.value;
-    availableBalance.innerHTML = budgetminusexpense;
+    availableBalance.innerHTML = availableBalance.innerText - itemCost.value;
     newList = document.createElement('li');
-    newList2 = document.createElement('li');
-    newListtextnode = document.createTextNode(itemName.value);
-    newList2textnode = document.createTextNode(itemCost.value);
+    newList.style.border = "1px solid purple";
+    newList.style.height = "10%";
+    newList.style.width = "30%"
+    newList.style.fontSize = "140%"
+    newList.style.fontWeight = "bold"
+    newList.style.listStyle = "none"
+    newList.style.display = "flex";
+    newList.style.margin = "auto";
+    newList.style.marginTop = "2%";
+    // newList.style.justifyContent = "center";
+    hopeSave = document.createElement("button");
+    hopeSave.style.fontSize = '130%';
+
+    hopeSave.style.marginLeft = "5%";
+    hopeSave.appendChild(document.createTextNode("X"));
+    saveBalance = document.createTextNode(itemName.value + " " + " " + " ");
+    newList2textnode = document.createTextNode(" " + " " + " " + itemCost.value);
+    newList.appendChild(saveBalance);
     newList.appendChild(newList2textnode);
-    newList2.appendChild(newList2textnode);
-
+    newList.appendChild(hopeSave);
     disitemCost.appendChild(newList);
-    disitemCost.appendChild(newList2);
     itemCost.value = "";
+    itemName.value = "";
 
-})
+    hopeSave.addEventListener("click", () => {
+        disitemCost.removeChild(newList);
+        disitemCost.innerHTML = "";
+    });
+
+
+});
